@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".BasicActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="@android:color/white"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".BasicActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/slider_layout"
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.cpacm.library.SimpleViewPager
+                android:id="@+id/simple_slider"
+                android:layout_width="match_parent"
+                android:layout_height="164dp"
+                android:background="#ffffff">
+
+            </com.cpacm.library.SimpleViewPager>
+
+            <com.cpacm.library.indicator.ViewpagerIndicator.UnderlinePageIndicator
+                android:id="@+id/underline_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_gravity="bottom"
+                app:selectedColor="@color/colorPrimary" />
+
+        </androidx.cardview.widget.CardView>
+
+        <com.cpacm.library.indicator.ViewpagerIndicator.CirclePageIndicator
+            android:id="@+id/circle_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/slider_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:padding="4dp"
+            app:fillColor="@color/colorPrimary"
+            app:strokeColor="#000000" />
+
+        <com.cpacm.library.indicator.ViewpagerIndicator.IconPageIndicator
+            android:id="@+id/icon_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/circle_indicator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:padding="4dp" />
+
+        <com.cpacm.library.indicator.ViewpagerIndicator.LinePageIndicator
+            android:id="@+id/line_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon_indicator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:padding="4dp"
+            app:selectedColor="@color/colorPrimary" />
+
+        <com.cpacm.library.indicator.SpringIndicator.SpringIndicator
+            android:id="@+id/spring_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/line_indicator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            app:siRadiusMax="16dp"
+            app:siRadiusMin="4dp"
+            app:siSelectedTextColor="@color/si_default_text_color"
+            app:siTextColor="@color/colorPrimary"
+            app:siTextSize="8sp" />
+
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
